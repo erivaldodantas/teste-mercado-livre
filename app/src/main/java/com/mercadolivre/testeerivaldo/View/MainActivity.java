@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
     FragmentManager fm = getSupportFragmentManager();
 
+    private ValueFragment vlFragment = (ValueFragment) fm.findFragmentByTag(fgtValue);
     private BankFragment bkFragment = (BankFragment) fm.findFragmentByTag(fgtBank);
     private TypeFragment tpFragment = (TypeFragment)fm.findFragmentByTag(fgtType);
 
-    public static String fgtType = "type-payment", fgtBank = "bank-payment",fgtPlots = "plots-payment";
+    public static String fgtType = "type-payment", fgtBank = "bank-payment",fgtPlots = "plots-payment",fgtValue = "value-payment";
 
     private String currentStep = null;
-
 
     private Type typeSelected = null;
     private Bank bankSelected = null;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         if(savedInstanceState == null)
-            this.openFragment(fgtType);
+            this.openFragment(fgtValue);
     }
 
     public void openFragment(String fragment){
@@ -51,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
         this.currentStep = fragment;
 
-        if(fragment==fgtType){
+        if(fragment==fgtValue){
+
+            vlFragment = new ValueFragment();
+            ft.replace(R.id.main_content, vlFragment, fgtValue);
+        }else if(fragment==fgtType){
 
             tpFragment = new TypeFragment();
             ft.replace(R.id.main_content, tpFragment, fgtType);

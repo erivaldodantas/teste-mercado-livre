@@ -51,19 +51,13 @@ public class BankViewModel extends ViewModel {
             @Override
             public void onResponse(Call<List<Bank>> call, Response<List<Bank>> response) {
 
-
-
                 bankList.setValue(response.body());
-
-                Log.d("Banks-Repsonse", response.toString());
-                Log.d("Banks-Repsonse", response.body().toString());
 
             }
 
             @Override
             public void onFailure(Call<List<Bank>> call, Throwable t) {
-                Log.d("Banks-Repsonse", t.getMessage());
-
+                t.getStackTrace();
             }
         });
     }

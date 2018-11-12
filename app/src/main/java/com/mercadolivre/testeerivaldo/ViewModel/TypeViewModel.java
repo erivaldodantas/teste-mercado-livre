@@ -44,19 +44,13 @@ public class TypeViewModel extends ViewModel {
             @Override
             public void onResponse(Call<List<Type>> call, Response<List<Type>> response) {
 
-
-
                 typeList.setValue(response.body());
-
-                Log.d("Types-Repsonse", response.toString());
-                Log.d("Types-Repsonse", response.body().toString());
 
             }
 
             @Override
             public void onFailure(Call<List<Type>> call, Throwable t) {
-                Log.d("Types-Repsonse", t.getMessage());
-
+                t.getStackTrace();
             }
         });
     }

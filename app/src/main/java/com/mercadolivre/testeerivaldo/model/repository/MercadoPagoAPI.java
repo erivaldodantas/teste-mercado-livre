@@ -18,7 +18,10 @@ public interface MercadoPagoAPI {
     @GET("payment_methods")
     Call<List<Type>> getTypes(@Query("public_key") String public_key);
 
-
     @GET("payment_methods/card_issuers")
     Call<List<Bank>> getBanks(@Query("public_key") String public_key, @Query("payment_method_id") String payment_method_id);
+
+    @GET("payment_methods/installments")
+    Call<List<Bank>> getPlots(@Query("public_key") String public_key, @Query("payment_method_id") String payment_method_id, @Query("issuer.id") String bank);
+
 }
