@@ -34,7 +34,6 @@ public class TypeFragment extends Fragment {
 
     @BindView(R.id.rcvTypes) RecyclerView rcvTypes;
     @BindView(R.id.progressType) ProgressBar progressBar;
-    @BindView(R.id.edtValue) EditText edtValue;
 
     public TypeFragment() {
         super();
@@ -72,8 +71,6 @@ public class TypeFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        edtValue.setText(((MainActivity) getActivity()).getValue());
-
         observerViewModel(getContext());
 
 
@@ -99,15 +96,10 @@ public class TypeFragment extends Fragment {
     }
 
     private void setType(Type type){
-        String tmpValue = edtValue.getText().toString();
 
-        if(tmpValue.isEmpty()){
-            Toast.makeText(getContext(), "Antes de selecionar o tipo, informe o valor.", Toast.LENGTH_SHORT).show();
-        }else {
-            ((MainActivity) getActivity()).setTypeAndValue(type, tmpValue);
-        }
+            ((MainActivity) getActivity()).setType(type);
+
 
     }
-
 
 }

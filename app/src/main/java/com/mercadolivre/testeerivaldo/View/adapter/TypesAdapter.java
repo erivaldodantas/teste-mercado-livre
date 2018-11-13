@@ -26,16 +26,16 @@ public class TypesAdapter extends RecyclerView.Adapter<TypesAdapter.TypeViewHold
     List<Type> typeList;
     SelectActions tpActions;
 
-    public TypesAdapter(Context mCtx, List<Type> heroList, SelectActions tpActions) {
+    public TypesAdapter(Context mCtx, List<Type> typeList, SelectActions tpActions) {
         this.mCtx = mCtx;
-        this.typeList = heroList;
+        this.typeList = typeList;
         this.tpActions = tpActions;
     }
 
     @NonNull
     @Override
     public TypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mCtx).inflate(R.layout.fragment_type_item, parent, false);
+        View view = LayoutInflater.from(mCtx).inflate(R.layout.item_type, parent, false);
         return new TypeViewHolder(view);
     }
 

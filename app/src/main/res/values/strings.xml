@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Mercado Livre - Erivaldo</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="voltar">Voltar</string>
+    <string name="iniciarPayment">Iniciar Pagamento</string>
+    <string name="labelBack">Voltar</string>
+    <string name="cleanPayment">Reiniciar Pagamento</string>
+    <string name="typeNotSet">Tipo não informado</string>
+    <string name="bankNotSet">Banco não informado</string>
+    <string name="plotsNotSet">Parcelas não informadas</string>
 </resources>

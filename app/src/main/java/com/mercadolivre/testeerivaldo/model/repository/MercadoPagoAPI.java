@@ -1,6 +1,7 @@
 package com.mercadolivre.testeerivaldo.model.repository;
 
 import com.mercadolivre.testeerivaldo.model.Bank;
+import com.mercadolivre.testeerivaldo.model.PlotBase;
 import com.mercadolivre.testeerivaldo.model.Type;
 
 import java.util.List;
@@ -22,6 +23,6 @@ public interface MercadoPagoAPI {
     Call<List<Bank>> getBanks(@Query("public_key") String public_key, @Query("payment_method_id") String payment_method_id);
 
     @GET("payment_methods/installments")
-    Call<List<Bank>> getPlots(@Query("public_key") String public_key, @Query("payment_method_id") String payment_method_id, @Query("issuer.id") String bank);
+    Call<List<PlotBase>> getPlots(@Query("public_key") String public_key, @Query("amount")String amount, @Query("payment_method_id") String payment_method_id, @Query("issuer.id") String bank);
 
 }

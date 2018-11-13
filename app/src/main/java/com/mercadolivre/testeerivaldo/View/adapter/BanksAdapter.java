@@ -26,16 +26,16 @@ public class BanksAdapter extends RecyclerView.Adapter<BanksAdapter.BankViewHold
     List<Bank> bankList;
     SelectActions tpActions;
 
-    public BanksAdapter(Context mCtx, List<Bank> heroList, SelectActions tpActions) {
+    public BanksAdapter(Context mCtx, List<Bank> bankList, SelectActions tpActions) {
         this.mCtx = mCtx;
-        this.bankList = heroList;
+        this.bankList = bankList;
         this.tpActions = tpActions;
     }
 
     @NonNull
     @Override
     public BankViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewBank) {
-        View view = LayoutInflater.from(mCtx).inflate(R.layout.fragment_bank_item, parent, false);
+        View view = LayoutInflater.from(mCtx).inflate(R.layout.item_bank, parent, false);
         return new BankViewHolder(view);
     }
 

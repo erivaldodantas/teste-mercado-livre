@@ -45,10 +45,6 @@ public class BankFragment extends Fragment {
     @BindView(R.id.txvNotBanks)
     TextView txvNotBanks;
 
-    @OnClick(R.id.btnBackBank) void btnBackBank(){
-        ((MainActivity) getActivity()).openFragment(MainActivity.fgtType);
-    }
-
     public BankFragment() {
 
     }
